@@ -106,6 +106,53 @@ yarn build
 yarn start
 ```
 
+## Docker Usage
+
+### Building the Docker Image
+
+To build the Docker image for this application, run:
+
+```bash
+docker build -t img2pdf .
+```
+
+### Running the Docker Container
+
+Once the image is built, you can run it with:
+
+```bash
+docker run -p 3000:3000 img2pdf
+```
+
+The application will be available at http://localhost:3000
+
+### Development with Docker Compose (Optional)
+
+For development, you can create a docker-compose.yml file with:
+
+```yaml
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+```
+
+Then run:
+
+```bash
+docker-compose up
+```
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details. 
