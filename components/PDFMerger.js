@@ -329,6 +329,7 @@ const PDFMerger = () => {
               onClick={clearAllPdfs}
               className="btn btn-secondary"
               disabled={isMerging}
+              style={{ marginRight: '10px' }}
             >
               Clear All Files
             </button>
