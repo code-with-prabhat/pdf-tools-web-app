@@ -12,7 +12,8 @@ RUN npm ci
 FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-COPY . .
+COPY . /app
+RUN npm install
 
 # Build the Next.js application
 RUN npm run build
@@ -43,4 +44,4 @@ USER nextjs
 EXPOSE 3000
 
 # Start the application
-CMD ["npm", "start"] 
+CMD ["npm", "start"]
