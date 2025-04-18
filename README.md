@@ -80,7 +80,7 @@ This application focuses on preserving document quality by:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/pdf-tools-suite.git
+git clone https://github.com/code-with-prabhat/pdf-tools-suite.git
 cd pdf-tools-suite
 
 # Install dependencies
